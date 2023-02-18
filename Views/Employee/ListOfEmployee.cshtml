@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MeetingRoom1.Models.MeetingRoomModel>
+
+
+@{
+    ViewData["Title"] = "ListOfEmployee";
+}
+<head><link rel="stylesheet" href="~/css/ListOfEmployee.css" /></head>
+
+<h1>ListOfEmployee</h1>
+
+<div>
+    <h4>MeetingRoomModel</h4>
+    <hr />
+   
+    <table class="row"  >
+        <tr class="table-headers">
+             <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.MeetingRoom_Id)
+            </th>
+            <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.FloorNo)
+            </th>
+            <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.RoomNo)
+            </th>
+            <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.Desktops)
+            </th>
+            <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.Projectors)
+            </th>
+             <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th style="border:1px solid black;width:5vw;">@Html.DisplayNameFor(model => model.BranchName)
+            </th>
+            <th style="border:1px solid black;width:5vw;">Button</th>
+        </tr>
+        @foreach (var item in Model) {
+        <tr>
+             <td style="border:1px solid black">@Html.DisplayFor(modelItem => item.MeetingRoom_Id)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.FloorNo)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.RoomNo)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.Desktops)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.Projectors)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+              <td style="border:1px solid black;width:5vw;">@Html.DisplayFor(modelItem => item.BranchName)
+            </td>
+            <td style="border:1px solid black;width:5vw;">@Html.ActionLink("Request", "AddRequest", new { id=item.MeetingRoom_Id })</td>
+            @*<td>@Html.ActionLink("Edit", "Edit", new { id=item.AutoId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.AutoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.AutoId })
+            </td>*@
+             
+        </tr>
+        }
+    </table>
+       
+ 
+  
+</div>
+        
+        
+ 
+<div>
+  
+    <a asp-action="AddEmp">Back to List</a>
+</div>
